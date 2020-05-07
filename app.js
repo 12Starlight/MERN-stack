@@ -3,14 +3,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-const db = require('./config/keys').mongoURI; 
+const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
 const users = require('./routes/api/users'); // After we created our routes they need to be imported
 const notes = require('./routes/api/notes');
 const bodyParser = require('body-parser');
 
 
 mongoose 
-  .connect(db, { useNewUrlParser: true })
+  .connect(db, { useNewUrlParser: true }) // Connecting to the database, 2nd arg config object 
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch(err => console.log(err));
 
