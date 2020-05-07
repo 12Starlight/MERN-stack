@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 // Express Router
 app.use('/api/users', users); // After we import the routes, we need to use them in app.js in order for them to work
 app.use('/api/notes', notes);
-
+  
 
 
 const port = process.env.PORT || 5000;
