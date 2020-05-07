@@ -6,8 +6,8 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
 const users = require('./routes/api/users'); // After we created our routes they need to be imported
 const notes = require('./routes/api/notes');
-const bodyParser = require('body-parser');
 const User = require('./models/User');
+const bodyParser = require('body-parser'); // Tells our app what sorts of requests, it should respond to
 
 
 mongoose 
@@ -15,8 +15,8 @@ mongoose
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch(err => console.log(err));
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false })); // App responds to other software like postman, Takes an options object
+app.use(bodyParser.json()); // Told our app we want it to respond to json requests
 
 app.get('/', (req, res) => {
   // console.log(res); 
