@@ -17,8 +17,11 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => res.send('Hello World! We are building a Google Keep clone'));
-
+app.get('/', (req, res) => {
+  // console.log(res); 
+  debugger; 
+  res.send('Hello World! We are building a Google Keep clone')
+});
 
 // Express Router
 app.use('/api/users', users); // After we import the routes, we need to use them in app.js in order for them to work
