@@ -3,6 +3,7 @@ const router = express.Router();
 
 const User = require('../../models/User');
 const bcrypt = require('bcryptjs'); 
+const keys = require('../../config/keys');
 
 
 router.get('/test', (req, res) => res.json({ msg: 'This is the users route'}));
