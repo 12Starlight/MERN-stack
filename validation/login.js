@@ -21,7 +21,7 @@ module.exports = function(data) {
     errors.password = 'Password field is required'; 
   }
  
-  
+     
   return {
     errors,
     isValid: Object.keys(errors).length === 0;
