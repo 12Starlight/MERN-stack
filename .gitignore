@@ -3,7 +3,6 @@
 /bundle.js.map
 /bundle.js
 /config/keys_dev.js
-/node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*
