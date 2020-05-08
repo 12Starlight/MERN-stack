@@ -13,7 +13,7 @@ module.exports = function(data) {
     errors.email = 'Email is invalid'; 
   }
 
-  if (!Validator.isEmpty(data.email)) {
+  if (Validator.isEmpty(data.email)) {
     errors.email = 'Email field is required'; 
   }
 

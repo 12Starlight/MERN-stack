@@ -49,6 +49,13 @@ router.post('/login', (req, res) => {
   const email = req.body.email;
   const password = req.body.password;
 
+  const { errors, isValid } = validateLoginInput(req.body);
+
+  if (!isValid) {
+    return res.status(400).json(errors);
+  }
+
+
   User.findOne({ email }) // returns a promise, the one object
     .then(user => {
       if (!user) {
