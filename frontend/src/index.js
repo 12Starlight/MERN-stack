@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = '/login'; 
     }
   } else {
-    // If this a first time user, start with an empty store 
+    // If this a first time user, start with an empty s tore 
     store = configureStore({});
   }
   // Render our root component and pass in the store as a prop
