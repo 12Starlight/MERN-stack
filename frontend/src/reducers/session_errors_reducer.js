@@ -3,7 +3,7 @@ import { RECEIVE_SESSION_ERRORS, RECEIVE_CURRENT_USER, RECEIVE_USER_LOGOUT } fro
 const _nullErrors = [];
 
 
-const SessionErrorsReducer = (state = _nullErrors) => {
+const SessionErrorsReducer = (state = _nullErrors, action) => {
   Object.freeze(state);
 
   switch(action.type) {
