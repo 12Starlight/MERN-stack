@@ -23,6 +23,12 @@ export const receiveNewNote = (note) => ({
 
 
 // Thunk Action Creator
+export const fetchNotes = () => (dispatch) => (
+  getNotes()
+    .then(notes => dispatch(receiveNotes(notes)))
+    .catch(err => console.log(err))
+);
+
 export const fetchUserNotes = (id) => (dispatch) => (
   getUserNotes(id)
     .then(notes => dispatch(receiveUserNotes(notes)))
