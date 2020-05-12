@@ -44,6 +44,13 @@ class NoteCompose extends React.Component {
         <form>
           <div>
             <input 
+              type='text'
+              value={this.state.title}
+              onChange={this.update('title')}
+              placeholder='Title'
+            />
+            <br/>
+            <input 
               type='textarea'
               value={this.state.text}
               onChange={this.update('text')}
