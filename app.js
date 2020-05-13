@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
+const path = require('path');
 
 const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
 const users = require('./routes/api/users'); // After we created our routes they need to be imported
@@ -18,24 +19,32 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false })); // App responds to other software like postman, Takes an options object
 app.use(bodyParser.json()); // Told our app we want it to respond to json requests
 
-app.get('/', (req, res) => {
-  // console.log(res); 
-  // debugger; 
-  const user = new User({
-    handle: 'starlight',
-    email: 'starlight@gmail.com',
-    password: 'starlight123'
-  })
-  user.save()
-  res.send('Hello World! We are building a Google Keep clone')
-});
 
 // Express Router
 app.use('/api/users', users); // After we import the routes, we need to use them in app.js in order for them to work
 app.use('/api/notes', notes);
   
-
+app.use(passsport.initialize());
 
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('frontend/build'));
+  app.get('/', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  })
+} else {
+  app.get('/', (req, res) => {
+    // console.log(res); 
+    // debugger; 
+    const user = new User({
+      handle: 'starlight',
+      email: 'starlight@gmail.com',
+      password: 'starlight123'
+    })
+    user.save()
+    res.send('Hello World! We are building a Google Keep clone')
+  });
+}
