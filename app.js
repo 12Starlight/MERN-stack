@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const path = require('path');
+const passport = require('passport');
 
 // const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
 const db = process.env.MONGO_URI
@@ -25,7 +26,7 @@ app.use(bodyParser.json()); // Told our app we want it to respond to json reques
 app.use('/api/users', users); // After we import the routes, we need to use them in app.js in order for them to work
 app.use('/api/notes', notes);
   
-app.use(passsport.initialize());
+app.use(passport.initialize());
 
 const port = process.env.PORT || 5000;
 
