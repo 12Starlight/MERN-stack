@@ -16,6 +16,7 @@ class NoteCompose extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    debugger; 
     this.setState({ newNote: { title: nextProps.newNote.title, text: nextProps.newNote.text } });
   }
 
@@ -41,7 +42,7 @@ class NoteCompose extends React.Component {
   render() {
     return(
       <div>
-        <form>
+        <form onSubmit={this.handleSubmit} >
           <div>
             <input 
               type='text'
