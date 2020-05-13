@@ -2,8 +2,9 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const path = require('path');
 const passport = require('passport');
+// require('./config/passport')(passport)
+const path = require('path');
 
 // const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
 const db = process.env.MONGO_URI
@@ -14,8 +15,8 @@ const bodyParser = require('body-parser'); // Tells our app what sorts of reques
 
 
 mongoose 
-  .connect(db, { useNewUrlParser: true }) // Connecting to the database, 2nd arg config object 
-  .then(() => console.log('Connected to MongoDB successfully'))
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true }) // Connecting to the database, 2nd arg config object 
+  .then(() => console.log('Connected to MongoDB successfully', process.env.MONGO_URI))
   .catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: false })); // App responds to other software like postman, Takes an options object
