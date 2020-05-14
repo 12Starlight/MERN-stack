@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faJediOrder } from '@fortawesome/free-brands-svg-icons'
 import './navbar.css';
 
 
@@ -30,8 +32,8 @@ class NavBar extends React.Component {
       return (
         <div className='links-signedOut-wrapper'>
           <div className='links-signedOut-outer' >
-            <button><Link className='links-signedOut' to={'/signup'} >Signup</Link></button>
-            <button><Link className='links-signedOut' to={'/login'} >Login</Link></button>
+            <Link className='links-signedOut' to={'/signup'} ><button className='links-signedOut-inner' >Signup</button></Link>
+            <Link className='links-signedOut' to={'/login'} ><button className='links-signedOut-inner' >Login</button></Link>
           </div>
         </div>
       );
@@ -42,7 +44,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className='nav-outer'>
-        <div className='nav-title'>Starlight</div>
+        <div className='nav-title'><div className='nav-title-inner'>Starlight</div><FontAwesomeIcon className='nav-title-inner-icon' icon={faJediOrder} /></div>
         <div>
           {this.getLinks()}
         </div>
