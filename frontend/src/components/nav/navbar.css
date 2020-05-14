@@ -80,25 +80,36 @@
   outline: none; 
   height: 40%;
   width: 16%;
-  border-radius: 7%;
-  background-color: orange;
+  border-radius: 6px;
+  background: orange;
   border: 1px solid orange; 
+}
+
+.links-loggedIn:hover {
+  background: none;
 }
 
 .links-loggedIn-inner {
   font-family: Arial, Helvetica, sans-serif;
   font-size: .9em;
   color: rgb(0, 64, 255);
+  text-shadow: 1px 2px 3px rgb(255, 255, 255);
+  width: 100%; 
   outline: none; 
   cursor: pointer;
   border: none;
-  background-color: orange;
+  background: orange;
+}
+
+.links-loggedIn-inner:hover {
+  background: none; 
 }
 
 .links-loggedIn-button {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: .9em;
+  font-size: .9em; 
   color: rgb(0, 64, 255);
+  text-shadow: 1px 2px 3px rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   text-decoration: none;
@@ -107,9 +118,13 @@
   outline: none; 
   height: 40%;
   width: 16%;
-  border-radius: 7%;
+  border-radius: 6px;
   background: orange; 
   border: 1px solid orange; 
+}
+
+.links-loggedIn-button:hover {
+  background: none; 
 }
 
 /* Signed Out */
@@ -140,17 +155,27 @@
   outline: none; 
   height: 40%;
   width: 26%;
-  border-radius: 7%;
+  border-radius: 6px;
   background: orange;
   border: 1px solid orange; 
+}
+
+.links-signedOut:hover {
+  background: whitesmoke;
 }
 
 .links-signedOut-inner {
   font-family: Arial, Helvetica, sans-serif;
   font-size: .9em;
   color: rgb(0, 64, 255);
+  text-shadow: 1px 2px 3px rgb(255, 255, 255);
   outline: none; 
   cursor: pointer;
+  width: 100%;
   background: orange;
   border: none;
+}
+
+.links-signedOut-inner:hover {
+  background: none; 
 }
