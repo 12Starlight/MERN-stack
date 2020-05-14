@@ -65,8 +65,9 @@ class LoginForm extends React.Component {
       <div className='login-wrapper'>
         <div className='login-outer'>
           <form className='login-form' onSubmit={this.handleSubmit} >
-            <div>
+            <div className='login-form-inner'>
               <input
+                className='login-form-input'
                 type='text'
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -74,13 +75,14 @@ class LoginForm extends React.Component {
               />
               <br />
               <input
+                className='login-form-input'
                 type='password'
                 value={this.state.password}
                 onChange={this.update('password')}
                 placeholder='Password'
               />
               <br />
-              <input type='submit' value='Submit' />
+              <input className='login-form-button' type='submit' value='Submit' />
               {this.renderErrors()}
             </div>
           </form>       
