@@ -45,7 +45,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className='nav-outer'>
+      <div className='nav-outer vertical-line'>
         <div className='nav-title'><div className='nav-title-inner'>Starlight</div><FontAwesomeIcon className='nav-title-inner-icon' icon={faJediOrder} /></div>
         <div>
           {this.getLinks()}
