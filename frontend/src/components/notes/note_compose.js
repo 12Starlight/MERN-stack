@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteBox from './note_box';
+import './note-compose.css'
 
 
 class NoteCompose extends React.Component {
@@ -41,27 +42,31 @@ class NoteCompose extends React.Component {
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.handleSubmit} >
-          <div>
-            <input 
-              type='text'
-              value={this.state.title}
-              onChange={this.update('title')}
-              placeholder='Title'
-            />
-            <br/>
-            <input 
-              type='textarea'
-              value={this.state.text}
-              onChange={this.update('text')}
-              placeholder='Write your note...'
-            />
-            <input type='submit' value='Submit' />
-          </div>
-        </form>
-        <br/>
-        <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} />
+      <div className='noteCompose-wrapper'>
+        <div className='noteCompose-outer' >
+          <form onSubmit={this.handleSubmit} >
+            <div className='noteComposeForm'>
+              <input
+                className='noteCompose-input'
+                type='text'
+                value={this.state.title}
+                onChange={this.update('title')}
+                placeholder='Title'
+              />
+              <br />
+              <input
+                className='noteCompose-input'
+                type='textarea'
+                value={this.state.text}
+                onChange={this.update('text')}
+                placeholder='Write your note...'
+              />
+              <div className='noteCompose-buttons'><input className='noteCompose-button' type='submit' value='Create' /></div>
+            </div>
+          </form>
+          <br />
+          <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} />          
+        </div>
       </div>
     )
   }
