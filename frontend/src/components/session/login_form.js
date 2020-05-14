@@ -64,7 +64,7 @@ class LoginForm extends React.Component {
     return (
       <div className='login-wrapper'>
         <div className='login-outer'>
-          <form onSubmit={this.handleSubmit} >
+          <form className='login-form' onSubmit={this.handleSubmit} >
             <div>
               <input
                 type='text'

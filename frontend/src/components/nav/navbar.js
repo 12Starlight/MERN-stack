@@ -21,11 +21,13 @@ class NavBar extends React.Component {
   getLinks() {
     if (this.props.loggedIn) {
       return (
-        <div >
-          <button><Link className='links-loggedIn' to={'/notes'} >All Notes</Link></button>
-          <button><Link className='links-loggedIn' to={'/profile'} >Profile</Link></button>
-          <button><Link className='links-loggedIn' to={'/new_note'} >Create A Note</Link></button>
-          <button className='links-loggedIn' onClick={this.logoutUser} >Logout</button>
+        <div className='links-loggedIn-wrapper'>
+          <div className='links-loggedIn-outer'>
+            <Link className='links-loggedIn' to={'/notes'} ><button className='links-loggedIn-inner'>All Notes</button></Link>
+            <Link className='links-loggedIn' to={'/profile'} ><button className='links-loggedIn-inner'>Profile</button></Link>
+            <Link className='links-loggedIn' to={'/new_note'} ><button className='links-loggedIn-inner'>Create A Note</button></Link>
+            <button className='links-loggedIn-button' onClick={this.logoutUser} >Logout</button>
+          </div>
         </div>
       );
     } else {
