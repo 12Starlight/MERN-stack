@@ -20,17 +20,19 @@ class NavBar extends React.Component {
     if (this.props.loggedIn) {
       return (
         <div >
-          <button><Link to={'/notes'} >All Notes</Link></button>
-          <button><Link to={'/profile'} >Profile</Link></button>
-          <button><Link to={'/new_note'} >Create A Note</Link></button>
-          <button onClick={this.logoutUser} >Logout</button>
+          <button><Link className='links-loggedIn' to={'/notes'} >All Notes</Link></button>
+          <button><Link className='links-loggedIn' to={'/profile'} >Profile</Link></button>
+          <button><Link className='links-loggedIn' to={'/new_note'} >Create A Note</Link></button>
+          <button className='links-loggedIn' onClick={this.logoutUser} >Logout</button>
         </div>
       );
     } else {
       return (
-        <div>
-          <button><Link to={'/signup'} >Signup</Link></button>
-          <button><Link to={'/login'} >Login</Link></button>
+        <div className='links-signedOut-wrapper'>
+          <div className='links-signedOut-outer' >
+            <button><Link className='links-signedOut' to={'/signup'} >Signup</Link></button>
+            <button><Link className='links-signedOut' to={'/login'} >Login</Link></button>
+          </div>
         </div>
       );
     }
@@ -39,11 +41,11 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className='outer'>
-        <h1>Starlight</h1>
-        <article>
+      <div className='nav-outer'>
+        <div className='nav-title'>Starlight</div>
+        <div>
           {this.getLinks()}
-        </article>
+        </div>
       </div>
     );
   }

@@ -1,10 +1,30 @@
-.outer {
+.nav-outer {
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0; 
+  box-sizing: border-box;
+  display: flex;
   width: 100%; 
-  height: 10%;
-  border: 1px solid black; 
+  height: 8%;
+  border: 2px solid black; 
+}
+
+.nav-title {
+  border: 1px solid orange;
+}
+
+/* Logged In */
+.links-loggedIn {
+  text-decoration: none;
+  outline: none;
+}
+
+/* Signed Out */
+.links-signedOut-wrapper {
+  display: flex;
+  border: 1px solid blue; 
+}
+
+
+.links-signedOut {
+  text-decoration: none;
+  outline: none; 
 }
