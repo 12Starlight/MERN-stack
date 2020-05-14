@@ -26,7 +26,7 @@ class Note extends React.Component {
       return (<div>There are no notes</div>)
     } else {
       return (
-        <div>
+        <div >
           <h2>All Notes</h2>
           {this.state.notes.map(note => (
             <NoteBox key={note._id} text={note.text} title={note.title} />

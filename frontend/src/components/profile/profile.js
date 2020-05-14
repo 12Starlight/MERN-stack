@@ -1,5 +1,6 @@
 import React from 'react';
 import NoteBox from '../notes/note_box';
+import './profile.css';
 
 
 class Profile extends React.Component {
@@ -26,8 +27,8 @@ class Profile extends React.Component {
       return (<div>This user has no Notes</div>)
     } else {
       return (
-        <div>
-          <h2>All of this User's Notes</h2>
+        <div className='outer-profile'>
+          <h3>All of this User's Notes</h3>
           {this.state.notes.map(note => (
             <NoteBox key={note._id} text={note.text} title={note.title} />
           ))}
