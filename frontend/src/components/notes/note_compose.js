@@ -1,6 +1,7 @@
 import React from 'react';
 import NoteBox from './note_box';
 import './note-compose.css'
+import './note_box.css';
 
 
 class NoteCompose extends React.Component {
