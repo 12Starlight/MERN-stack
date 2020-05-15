@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import NoteBox from './note_box';
+import './notes.css';
 
 
 class Note extends React.Component {
@@ -26,11 +27,13 @@ class Note extends React.Component {
       return (<div>There are no notes</div>)
     } else {
       return (
-        <div >
+        <div className='notes-wrapper'>
           <h2>All Notes</h2>
-          {this.state.notes.map(note => (
-            <NoteBox key={note._id} text={note.text} title={note.title} />
-          ))}
+          <div className='notes-outer'>
+            {this.state.notes.map(note => (
+              <NoteBox key={note._id} text={note.text} title={note.title} />
+            ))}
+          </div>
         </div>
       );
     }

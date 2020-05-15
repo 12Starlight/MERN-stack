@@ -66,7 +66,9 @@ class NoteCompose extends React.Component {
             </div>
           </form>
           <br />
-          <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} />          
+          <div className='noteCompose-noteBox-wrapper'>
+            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} />          
+          </div>
         </div>
       </div>
     )
