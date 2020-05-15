@@ -4,20 +4,18 @@
 
 .noteBox-outer {
   position: relative;
-  display: flex;
   justify-content: space-evenly;
   top: 45%;
   left: -13%; 
   font-family: 'Reenie Beanie';
   font-size: 2em;
   line-height: 1;
-  text-align:center;     
+  text-align: center;     
   width: 275px;    
   margin: 25px;    
   min-height:180px;
   max-height:250px;
   padding-top:35px;
-  position:relative;   
   border:1px solid #E8E8E8;  
   border-top:60px solid #fdfd86;
   border-bottom-right-radius: 60px 5px;

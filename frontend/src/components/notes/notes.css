@@ -8,11 +8,18 @@
   /* border: 1px solid blue;  */
 }
 
+.notes-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4em;
+  padding-left: 1%; 
+  margin-top: 2%; 
+}
+
 .notes-outer {
   position: relative;
   display: flex; 
   align-items: center;
   flex-wrap: wrap;
-  padding-left: 2%;
+  padding-left: 2.6%;
   /* border: 1px solid black;  */
 }

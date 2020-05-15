@@ -28,10 +28,12 @@ class Profile extends React.Component {
     } else {
       return (
         <div className='outer-profile'>
-          <h3>All of this User's Notes</h3>
-          {this.state.notes.map(note => (
-            <NoteBox key={note._id} text={note.text} title={note.title} />
-          ))}
+          <div className='outer-profile-title'>All of this User's Notes</div>
+          <div className='outer-profile-notes'>
+            {this.state.notes.map(note => (
+              <NoteBox key={note._id} text={note.text} title={note.title} />
+            ))}
+          </div>
         </div>
       );
     }
