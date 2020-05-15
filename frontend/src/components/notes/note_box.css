@@ -1,4 +1,8 @@
 #noteBox-wrapper {
+  /* display: flex;  */
+  /* flex-wrap: wrap; */
+  margin: 1% 0 0 0; 
+  /* padding: 1%;  */
   /* border: 1px solid blue;  */
 }
 
@@ -6,7 +10,6 @@
   position: relative;
   justify-content: space-evenly;
   top: 45%;
-  left: -13%; 
   font-family: 'Reenie Beanie';
   font-size: 2em;
   line-height: 1;
@@ -46,4 +49,32 @@
          transform: matrix(-1, -0.1, 0, 1, 0, 0);
 }
 
+.noteBox-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 33%; 
+  padding-left: 7%; 
+  /* border: 1px solid black; */
+}
 
+.noteBox-button {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .9em; 
+  color: rgb(0, 64, 255);
+  text-shadow: 1px 2px 3px rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  outline: none; 
+  height: 40%;
+  width: 46%;
+  border-radius: 6px;
+  background: orange; 
+  border: 1px solid orange; 
+}
+
+.noteBox-button:hover {
+  background: none; 
+}

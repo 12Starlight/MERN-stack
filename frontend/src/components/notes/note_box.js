@@ -28,6 +28,10 @@ class NoteBox extends React.Component {
           <br/>
           <div>{this.props.text}</div>        
         </div>
+        <div className='noteBox-buttons'>
+          <button className='noteBox-button'>Delete</button>
+          <button className='noteBox-button'>color</button>
+        </div>
       </div>
     )
   }

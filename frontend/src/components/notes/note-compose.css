@@ -69,6 +69,6 @@
 .noteCompose-noteBox-wrapper {
   position: absolute; 
   display: flex;
-  top: 2%;
-  left: 2%;
+  top: 100%;
+  left: -3%;
 }
