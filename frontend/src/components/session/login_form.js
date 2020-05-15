@@ -18,14 +18,23 @@ class LoginForm extends React.Component {
   }
 
   // Once the user has been authenticated, redirect to the Notes page
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/notes');
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.currentUser === true) {
+  //     this.props.history.push('/notes');
+  //   }
 
-    // Set or clear errors
-    this.setState({errors: nextProps.errors})
-  }
+  //   // Set or clear errors
+  //   this.setState({errors: nextProps.errors})
+  // }
+
+  // componentDidUpdate(prevProps, nextProps) {
+  //   debugger; 
+  //   if (this.props.signedIn === true) {
+  //     this.props.history.push('/notes');
+  //   }
+
+  //   this.setState({ errors: nextProps.errors })
+  // }
 
   // Handle field updates (called in the render method)
   update(field) {

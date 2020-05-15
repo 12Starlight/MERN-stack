@@ -4,7 +4,9 @@ import LoginForm from './login_form';
 
 
 const mapStateToProps = (state) => {
+  debugger; 
   return {
+    signedIn: state.session.isAuthenticated,
     errors: state.errors.session
   };
 };

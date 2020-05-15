@@ -52,7 +52,7 @@
 .noteBox-buttons {
   display: flex;
   justify-content: space-between;
-  width: 33%; 
+  width: 50%; 
   padding-left: 7%; 
   /* border: 1px solid black; */
 }
@@ -69,7 +69,7 @@
   cursor: pointer;
   outline: none; 
   height: 40%;
-  width: 46%;
+  width: 30%;
   border-radius: 6px;
   background: orange; 
   border: 1px solid orange; 
