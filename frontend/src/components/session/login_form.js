@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
+      loggedIn: false,
       errors: {}
     };
 
@@ -35,6 +36,21 @@ class LoginForm extends React.Component {
 
   //   this.setState({ errors: nextProps.errors })
   // }
+
+  componentDidUpdate(prevProps, prevState) {
+    // debugger; 
+    if (this.props.signedInBefore !== prevProps.location.signedInAfter) {
+      this.props.fetchNotes(); 
+      this.props.history.push('/notes');
+    }
+  }
+
+  componentDidMount() {
+    if (this.props.signedIn === true) {
+      this.setState({ loggedIn: true });
+      this.props.history.push('/notes');
+    }
+  }
 
   // Handle field updates (called in the render method)
   update(field) {

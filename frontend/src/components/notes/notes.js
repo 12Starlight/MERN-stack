@@ -30,13 +30,14 @@ class Note extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     // debugger; 
     if (prevProps.notes !== this.state.notes) {
+      debugger; 
       this.setState({ notes: prevProps.notes });
-    }
+    } 
   }
 
 
   render() {
-    if (this.state.notes.length === 0) {
+    if (this.state.notes.length < 1) {
       return (<div>There are no notes</div>)
     } else {
       return (
