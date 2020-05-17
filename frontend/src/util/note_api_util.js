@@ -13,3 +13,6 @@ export const writeNote = (data) => {
   return axios.post('/api/notes/', data)
 }; 
 
+export const deleteNote = (noteId) => {
+  return axios.delete(`/api/notes/${noteId}`)
+}

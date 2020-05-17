@@ -17,9 +17,9 @@ class Note extends React.Component {
     this.props.fetchNotes();
   }
 
-  // componentWillReceiveProps(newState) {
-  //   this.setState({ notes: newState.notes });
-  // }
+  componentWillReceiveProps(newState) {
+    this.setState({ notes: newState.notes });
+  }
   
   // static getDerivedStateFromProps(nextProps, prevState) {
   //   if (nextProps.notes !== prevState.notes) {
@@ -27,13 +27,15 @@ class Note extends React.Component {
   //   }
   // }
 
-  componentDidUpdate(prevProps, prevState) {
-    // debugger; 
-    if (prevProps.notes !== this.state.notes) {
-      debugger; 
-      this.setState({ notes: prevProps.notes });
-    } 
-  }
+  // componentDidUpdate(prevProps, prevState) {
+  //   // debugger; 
+  //   if (this.props.history.location.pathname === prevProps.history.location.pathname && prevState.notes !== this.state.notes) {
+  //     debugger; 
+  //     this.setState((prevState, props) => { 
+  //       return { notes: prevState.notes.concat(props.notes) }
+  //     }); 
+  //   } 
+  // }
 
 
   render() {
