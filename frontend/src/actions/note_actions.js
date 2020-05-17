@@ -22,10 +22,13 @@ export const receiveNewNote = (note) => ({
   note
 });
 
-export const removedNote = (note) => ({
-  type: DELETE_NOTE,
-  noteId: note._id 
-})
+export const removedNote = (note) => {
+  debugger; 
+  return {
+    type: DELETE_NOTE,
+    noteId: note.data.message._id
+  } 
+}
 
 
 // Thunk Action Creator

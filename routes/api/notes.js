@@ -10,6 +10,7 @@ const Note = require('../../models/Note');
 // router.get('/test', (req, res) => res.json({ msg: 'This is the notes route'}));
 
 // Express Controller
+// Index
 router.get('/', (req, res) => {
   Note
     .find() // Find by filtering by the parameter, no parameter, so get everything back
@@ -18,6 +19,7 @@ router.get('/', (req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+// User Index
 router.get('/user/:user_id', (req, res) => {
   Note 
     .find({ user: req.params.user_id })
@@ -25,6 +27,7 @@ router.get('/user/:user_id', (req, res) => {
     .catch(error => res.status(404).json(error))
 });
 
+// Show 
 router.get('/:id', (req, res) => {
   Note
     .findById(req.params.id)
@@ -32,7 +35,7 @@ router.get('/:id', (req, res) => {
     .catch(error => res.status(404).json(error)) 
 })
 
-
+// Create
 router.post('/', 
   passport.authenticate('jwt', { session: false }),
   (req, res) => { 
@@ -52,6 +55,13 @@ router.post('/',
   }
 )
 
+// Delete
+router.delete('/:id', async (req, res) => {
+  const message = await Note
+    .findByIdAndRemove(req.params.id)
+    .then(() => { return { _id: req.params.id, deleted: 'Note deleted' }});
+  res.json({ message });
+});
 
 
 module.exports = router; 

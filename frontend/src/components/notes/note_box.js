@@ -21,6 +21,8 @@ class NoteBox extends React.Component {
 
 
   render() {
+    const { id, deletedNote } = this.props; 
+
     return (
       <div id='noteBox-wrapper'>
         <div className='noteBox-outer'>
@@ -29,7 +31,7 @@ class NoteBox extends React.Component {
           <div>{this.props.text}</div>        
         </div>
         <div className='noteBox-buttons'>
-          <button className='noteBox-button'>delete</button>
+          <button onClick={() => deletedNote(id)} className='noteBox-button'>delete</button>
           <button className='noteBox-button'>color</button>
           <button className='noteBox-button'>pin</button>
         </div>

@@ -47,7 +47,7 @@ class Note extends React.Component {
           <div className='notes-title'>All Notes</div>
           <div className='notes-outer'>
             {this.state.notes.map(note => (
-              <NoteBox key={note._id} text={note.text} title={note.title} />
+              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} />
             ))}
           </div>
         </div>
