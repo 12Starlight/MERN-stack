@@ -24,7 +24,7 @@ export const receiveNewNote = (note) => ({
 
 export const removedNote = (note) => ({
   type: DELETE_NOTE,
-  noteId: note.id 
+  noteId: note._id 
 })
 
 
