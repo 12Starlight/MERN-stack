@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchUserNotes } from '../../actions/note_actions';
+import { fetchUserNotes, deletedNote } from '../../actions/note_actions';
 import Profile from './profile';
 
 
@@ -12,8 +12,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUserNotes: id => dispatch(fetchUserNotes(id))
-  };
+    fetchUserNotes: id => dispatch(fetchUserNotes(id)),
+    deletedNote: (noteId) => dispatch(deletedNote(noteId))
+  };  
 };
 
 

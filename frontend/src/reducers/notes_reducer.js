@@ -18,8 +18,9 @@ const NotesReducer = (state = { all: {}, user: {}, new: undefined }, action) => 
       return newState;
     case DELETE_NOTE:
       debugger; 
+      const userNotes = newState.user.filter(x => x._id !== action.noteId);
       const updatedNotes = newState.all.filter(x => x._id !== action.noteId);
-      return {...newState, all: updatedNotes}
+      return {...newState, all: updatedNotes, new: userNotes}
     default:
       return state;
   }

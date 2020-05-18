@@ -26,6 +26,7 @@ export const removedNote = (note) => {
   debugger; 
   return {
     type: DELETE_NOTE,
+    note,
     noteId: note.data.message._id
   } 
 }

@@ -18,6 +18,7 @@ class Note extends React.Component {
   }
 
   componentWillReceiveProps(newState) {
+    debugger; 
     this.setState({ notes: newState.notes });
   }
   

@@ -12,9 +12,14 @@ class Profile extends React.Component {
     }
   }
 
-  componentWillMount() {
+  // componentWillMount() {
+  //   console.log(this.props.currentUser.id)
+  //   this.props.fetchUserNotes(this.props.currentUser.id);
+  // }
+
+  componentDidMount() {
     console.log(this.props.currentUser.id)
-    this.props.fetchUserNotes(this.props.currentUser.id);
+    this.props.fetchUserNotes(this.props.currentUser.id); 
   }
 
   componentWillReceiveProps(newState) {
@@ -31,7 +36,7 @@ class Profile extends React.Component {
           <div className='outer-profile-title'>All of this User's Notes</div>
           <div className='outer-profile-notes'>
             {this.state.notes.map(note => (
-              <NoteBox key={note._id} text={note.text} title={note.title} />
+              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} />
             ))}
           </div>
         </div>
