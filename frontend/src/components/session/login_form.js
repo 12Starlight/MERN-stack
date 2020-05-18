@@ -39,7 +39,7 @@ class LoginForm extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     // debugger; 
-    if (this.props.signedInBefore !== prevProps.location.signedInAfter) {
+    if (this.props.signedIn === true) {
       this.props.fetchNotes(); 
       this.props.history.push('/notes');
     }

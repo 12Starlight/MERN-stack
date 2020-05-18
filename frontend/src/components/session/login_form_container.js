@@ -7,8 +7,7 @@ import LoginForm from './login_form';
 const mapStateToProps = (state) => {
   // debugger; 
   return {
-    signedInAfter: state.sessionApi.isAuthenticated,
-    signedInBefore: state.session.isAuthenticated,
+    signedIn: state.session.isAuthenticated,
     errors: state.errors.session,
     notes: state.notes
   };

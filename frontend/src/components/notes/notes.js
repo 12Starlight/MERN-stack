@@ -14,13 +14,14 @@ class Note extends React.Component {
   }
 
   componentDidMount() {
+    // debugger; 
     this.props.fetchNotes();
   }
 
-  componentWillReceiveProps(newState) {
-    // debugger; 
-    this.setState({ notes: newState.notes });
-  }
+  // componentWillReceiveProps(newState) {
+  //   // debugger; 
+  //   this.setState({ notes: newState.notes });
+  // }
   
   // static getDerivedStateFromProps(nextProps, prevState) {
   //   if (nextProps.notes !== prevState.notes) {
@@ -40,14 +41,15 @@ class Note extends React.Component {
 
 
   render() {
-    if (this.state.notes.length < 1) {
+    if (this.props.notes.length < 1) {
       return (<div>There are no notes</div>)
     } else {
+      // debugger; 
       return (
         <div className='notes-wrapper'>
           <div className='notes-title'>All Notes</div>
           <div className='notes-outer'>
-            {this.state.notes.map(note => (
+            {this.props.notes.map(note => (
               <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} />
             ))}
           </div>

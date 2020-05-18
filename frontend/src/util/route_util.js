@@ -14,18 +14,16 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
   )} />
 );
 
-const Protected = ({ component: Component, loggedIn, loggedInAfter, ...rest }) => (
+const Protected = ({ component: Component, loggedIn, ...rest }) => (
   <Route   
     {...rest}
     render={props => (
       loggedIn ? (
         <Component {...props} />
-      ) : (loggedInAfter ? (
-        // Redirect to the login page, if the user is already authenticated
-        <Redirect to='/notes' />
       ) : (
+        // Redirect to the login page, if the user is already authenticated
         <Redirect to='/login' />
-      ))
+      )
     )}  
   />
 );
@@ -34,8 +32,7 @@ const Protected = ({ component: Component, loggedIn, loggedInAfter, ...rest }) =
 const mapStateToProps = (state) => {
   // debugger; 
   return {
-    loggedIn: state.session.isAuthenticated,
-    loggedInAfter: state.sessionApi.isAuthenticated
+    loggedIn: state.session.isAuthenticated
   }
 };
 
