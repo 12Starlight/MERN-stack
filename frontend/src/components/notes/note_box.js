@@ -22,6 +22,8 @@ class NoteBox extends React.Component {
 
   render() {
     const { id, deletedNote } = this.props; 
+    // debugger; 
+    console.log('clicked')
 
     return (
       <div id='noteBox-wrapper'>

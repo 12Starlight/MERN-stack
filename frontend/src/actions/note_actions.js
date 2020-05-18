@@ -23,7 +23,7 @@ export const receiveNewNote = (note) => ({
 });
 
 export const removedNote = (note) => {
-  debugger; 
+  // debugger; 
   return {
     type: DELETE_NOTE,
     note,

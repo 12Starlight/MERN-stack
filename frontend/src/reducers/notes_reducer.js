@@ -17,10 +17,11 @@ const NotesReducer = (state = { all: {}, user: {}, new: undefined }, action) => 
       newState.new = action.note.data;
       return newState;
     case DELETE_NOTE:
-      debugger; 
+      // debugger; 
       const userNotes = newState.user.filter(x => x._id !== action.noteId);
       const updatedNotes = newState.all.filter(x => x._id !== action.noteId);
-      return {...newState, all: updatedNotes, new: userNotes}
+      const newNotes = delete newState.new; 
+      return {...newState, all: updatedNotes, user: userNotes, new: newNotes }
     default:
       return state;
   }

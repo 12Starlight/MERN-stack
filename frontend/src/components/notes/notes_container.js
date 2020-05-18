@@ -4,7 +4,7 @@ import Notes from './notes';
 
 
 const mapStateToProps = (state) => {
-  debugger; 
+  // debugger; 
   return {
     notes: Object.values(state.notes.all)
   };

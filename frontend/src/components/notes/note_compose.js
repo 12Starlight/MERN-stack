@@ -9,6 +9,7 @@ class NoteCompose extends React.Component {
     super(props);
 
     this.state = {
+      id: '',
       title: '',
       text: '',
       newNote: ''
@@ -18,13 +19,17 @@ class NoteCompose extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger; 
-    this.setState({ newNote: { title: nextProps.newNote.title, text: nextProps.newNote.text } });
+    this.setState({ newNote: { title: nextProps.newNote.title, text: nextProps.newNote.text }, id: nextProps.newNote._id });
+    // debugger; 
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
+    // debugger; 
     let note = {
       title: this.state.title,
       text: this.state.text
@@ -42,6 +47,8 @@ class NoteCompose extends React.Component {
 
 
   render() {
+    const { deletedNote } = this.props;
+
     return(
       <div className='noteCompose-wrapper'>
         <div className='noteCompose-outer' >
@@ -67,7 +74,7 @@ class NoteCompose extends React.Component {
           </form>
           <br />
           <div className='noteCompose-noteBox-wrapper'>
-            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} />          
+            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} id={this.state.id} deletedNote={deletedNote} />          
           </div>
         </div>
       </div>
