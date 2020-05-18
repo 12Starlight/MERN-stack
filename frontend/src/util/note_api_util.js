@@ -16,3 +16,7 @@ export const writeNote = (data) => {
 export const deleteNote = (noteId) => {
   return axios.delete(`/api/notes/${noteId}`)
 }
+
+export const updateColor = (note) => {
+  return axios.patch(`/api/notes/${note._id}`)
+}

@@ -55,6 +55,21 @@ router.post('/',
   }
 )
 
+// Update
+router.patch('/:id', async (req, res) => {
+  const { isValid, errors } = validateNoteInput(req.body)
+
+  if (!isValid) {
+    return res.status(400).json(errors)
+  }
+
+  const color = await Note 
+    .findById(req.params.id)
+    .update({ colorTop: req.param.colorTop, colorBody: req.params.colorBody })
+    .then(color => res.json(color)); 
+  res.json({color})
+})
+
 // Delete
 router.delete('/:id', async (req, res) => {
   const message = await Note

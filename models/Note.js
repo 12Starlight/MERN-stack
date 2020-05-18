@@ -15,9 +15,13 @@ const NoteSchema = new Schema({
     type: String,
     required: true
   },
-  color: {
+  colorTop: {
     type: String,
     required: false
+  },
+  colorBody: {
+    type: String,
+    required: false 
   },
   date: {
     type: Date,

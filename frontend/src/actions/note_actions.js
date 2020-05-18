@@ -1,10 +1,12 @@
-import { getNotes, getUserNotes, writeNote, deleteNote } from '../util/note_api_util';
+import { getNotes, getUserNotes, writeNote, deleteNote, updateColor } from '../util/note_api_util';
 
 // Constants
 export const RECEIVE_NOTES = 'RECEIVE_NOTES';
 export const RECEIVE_USER_NOTES = 'RECEIVE_USER_NOTES';
 export const RECEIVE_NEW_NOTE = 'RECEIVE_NEW_NOTE';
 export const DELETE_NOTE = 'DELETE_NOTE'; 
+export const COLOR_NOTE = 'COLOR_NOTE';
+
 
 // Regular Action Creator
 export const receiveNotes = (notes) => ({
@@ -29,6 +31,13 @@ export const removedNote = (note) => {
     note,
     noteId: note.data.message._id
   } 
+}
+
+export const colorNote = (note) => {
+  return {
+    type: COLOR_NOTE,
+    note 
+  }
 }
 
 
@@ -57,3 +66,8 @@ export const deletedNote = (noteId) => (dispatch) => (
     .catch(err => console.log(err))
 );
 
+export const coloredNote = (note) => (dispatch) => (
+  updateColor(note)
+    .then(colored => dispatch(colorNote(colored)))
+    .catch(err => console.log(err))
+);
