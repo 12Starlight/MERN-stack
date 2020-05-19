@@ -50,7 +50,7 @@ class Note extends React.Component {
           <div className='notes-title'>All Notes</div>
           <div className='notes-outer'>
             {this.props.notes.map(note => (
-              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} />
+              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} coloredNote={this.props.coloredNote} />
             ))}
           </div>
         </div>

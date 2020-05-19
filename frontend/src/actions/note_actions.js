@@ -34,6 +34,7 @@ export const removedNote = (note) => {
 }
 
 export const colorNote = (note) => {
+  debugger; 
   return {
     type: COLOR_NOTE,
     note 

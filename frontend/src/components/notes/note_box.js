@@ -7,6 +7,7 @@ class NoteBox extends React.Component {
     super(props);
 
     this.display = this.display.bind(this);
+    this.color = this.color.bind(this); 
   }
 
   display() {
@@ -19,9 +20,14 @@ class NoteBox extends React.Component {
     }
   }
 
+  color() {
+    debugger; 
+    return {colorTop: 'red', colorBody: 'green', _id: this.props.id }
+  }
+
 
   render() {
-    const { id, deletedNote } = this.props; 
+    const { id, deletedNote, coloredNote } = this.props; 
     // debugger; 
     console.log('clicked')
 
@@ -34,7 +40,7 @@ class NoteBox extends React.Component {
         </div>
         <div className='noteBox-buttons'>
           <button onClick={() => deletedNote(id)} className='noteBox-button'>delete</button>
-          <button className='noteBox-button'>color</button>
+          <button onClick={() => coloredNote(this.color())} className='noteBox-button'>color</button>
           <button className='noteBox-button'>pin</button>
         </div>
       </div>
