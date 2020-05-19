@@ -4,7 +4,7 @@ import NoteCompose from './note_compose';
 
 
 const mapStateToProps = (state) => {
-  // debugger; 
+  // debugger;  
   return {
     currentUser: state.session.user,
     newNote: state.notes.new,

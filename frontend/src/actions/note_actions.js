@@ -67,8 +67,9 @@ export const deletedNote = (noteId) => (dispatch) => (
     .catch(err => console.log(err))
 );
 
-export const coloredNote = (note) => (dispatch) => (
-  updateColor(note)
+export const coloredNote = (note) => (dispatch) => {
+  debugger; 
+  return updateColor(note)
     .then(colored => dispatch(colorNote(colored)))
     .catch(err => console.log(err))
-);
+};

@@ -40,8 +40,6 @@ class NoteBox extends React.Component {
         </div>
         <div className='noteBox-buttons'>
           <button onClick={() => deletedNote(id)} className='noteBox-button'>delete</button>
-          <button onClick={() => coloredNote(this.color())} className='noteBox-button'>color</button>
-          <button className='noteBox-button'>pin</button>
         </div>
       </div>
     )

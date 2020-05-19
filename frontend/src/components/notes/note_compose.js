@@ -12,10 +12,14 @@ class NoteCompose extends React.Component {
       id: '',
       title: '',
       text: '',
+      colorTop: '#fdfd86',
+      colorBody: '#ffff88',
+      colorCorner: '#ffffc6',
       newNote: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleColor = this.handleColor.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,7 +36,9 @@ class NoteCompose extends React.Component {
     // debugger; 
     let note = {
       title: this.state.title,
-      text: this.state.text
+      text: this.state.text,
+      colorTop: this.state.colorTop,
+      colorBody: this.state.colorBody
     }
 
     this.props.composeNote(note);
@@ -45,16 +51,31 @@ class NoteCompose extends React.Component {
     });
   }
 
+  handleColor(input1, input2, input3) {
+    console.log(input1, input2);
+    this.setState({
+      colorTop: input1,
+      colorBody: input2,
+      colorCorner: input3 
+    })
+  }
+
 
   render() {
     const { deletedNote } = this.props;
 
+    let color = {
+      borderTop: `60px solid ${this.state.colorTop}`,
+      background: `-webkit-linear-gradient(-45deg, ${this.state.colorBody} 81%, ${this.state.colorBody} 82%, ${this.state.colorBody} 82%, ${this.state.colorCorner} 100%)`
+    }
+
     return(
-      <div className='noteCompose-wrapper'>
+      <div style={color} className='noteCompose-wrapper'>
         <div className='noteCompose-outer' >
-          <form onSubmit={this.handleSubmit} >
+          <form >
             <div className='noteComposeForm'>
               <input
+                style={{outline: `1px solid ${this.state.colorTop}`}}
                 className='noteCompose-input'
                 type='text'
                 value={this.state.title}
@@ -63,13 +84,19 @@ class NoteCompose extends React.Component {
               />
               <br />
               <input
+                style={{outline: `1px solid ${this.state.colorTop}`}}
                 className='noteCompose-input'
                 type='textarea'
                 value={this.state.text}
                 onChange={this.update('text')}
                 placeholder='Write your note...'
               />
-              <div className='noteCompose-buttons'><input className='noteCompose-button' type='submit' value='Create' /></div>
+              <div className='noteCompose-buttons'>
+                <button className='noteCompose-button' onClick={this.handleSubmit} >Create</button>
+                <button className='noteCompose-button' onClick={() => this.handleColor('#e64533', '#e74c3c', '#f1978e')} >Red</button>
+                <button className='noteCompose-button' onClick={() => this.handleColor('#2691d9', '#3498db', '#93c8ec')} >Blue</button>
+                <button className='noteCompose-button' onClick={() => this.handleColor('#d9b00d', '#f1c40f', '#f8e187')} >Gold</button>
+              </div>
             </div>
           </form>
           <br />
