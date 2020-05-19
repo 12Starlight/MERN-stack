@@ -23,6 +23,10 @@ const NoteSchema = new Schema({
     type: String,
     required: false 
   },
+  colorCorner: {
+    type: String,
+    required: false 
+  },
   date: {
     type: Date,
     default: Date.now
