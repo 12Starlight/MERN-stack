@@ -69,13 +69,17 @@ class NoteCompose extends React.Component {
       background: `-webkit-linear-gradient(-45deg, ${this.state.colorBody} 81%, ${this.state.colorBody} 82%, ${this.state.colorBody} 82%, ${this.state.colorCorner} 100%)`
     }
 
+    let input = {
+      outline: `1px solid ${this.state.colorTop}`
+    }
+
     return(
       <div style={color} className='noteCompose-wrapper'>
         <div className='noteCompose-outer' >
           <form >
             <div className='noteComposeForm'>
               <input
-                style={{outline: `1px solid ${this.state.colorTop}`}}
+                style={input}
                 className='noteCompose-input'
                 type='text'
                 value={this.state.title}
@@ -84,7 +88,7 @@ class NoteCompose extends React.Component {
               />
               <br />
               <input
-                style={{outline: `1px solid ${this.state.colorTop}`}}
+                style={input}
                 className='noteCompose-input'
                 type='textarea'
                 value={this.state.text}
@@ -101,7 +105,7 @@ class NoteCompose extends React.Component {
           </form>
           <br />
           <div className='noteCompose-noteBox-wrapper'>
-            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} id={this.state.id} deletedNote={deletedNote} />          
+            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} id={this.state.id} deletedNote={deletedNote} color={color} input={input}  />          
           </div>
         </div>
       </div>
