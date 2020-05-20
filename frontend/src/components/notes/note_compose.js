@@ -99,7 +99,7 @@ class NoteCompose extends React.Component {
                 <button className='noteCompose-button' onClick={this.handleSubmit} >Create</button>
                 <button className='noteCompose-button' onClick={() => this.handleColor('#e64533', '#e74c3c', '#f1978e')} >Red</button>
                 <button className='noteCompose-button' onClick={() => this.handleColor('#2691d9', '#3498db', '#93c8ec')} >Blue</button>
-                <button className='noteCompose-button' onClick={() => this.handleColor('#d9b00d', '#f1c40f', '#f8e187')} >Gold</button>
+                <button className='noteCompose-button' onClick={() => this.handleColor('#f1c40e', '#f2ca26', '#f8e187')} >Gold</button>
               </div>
             </div>
           </form>
