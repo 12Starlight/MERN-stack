@@ -16,12 +16,13 @@ class Note extends React.Component {
   componentDidMount() {
     // debugger; 
     this.props.fetchNotes();
+    this.setState({ notes: this.props.notes });
   }
 
-  componentWillReceiveProps(newState) {
-    // debugger; 
-    this.setState({ notes: newState.notes });
-  }
+  // componentWillReceiveProps(newState) {
+  //   // debugger; 
+  //   this.setState({ notes: newState.notes });
+  // }
   
   // static getDerivedStateFromProps(nextProps, prevState) {
   //   if (nextProps.notes !== prevState.notes) {
