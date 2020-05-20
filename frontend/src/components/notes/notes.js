@@ -41,7 +41,9 @@ class Note extends React.Component {
 
 
   render() {
-    if (this.props.notes.length < 1) {
+    const { notes } = this.props; 
+
+    if (notes.length < 1) {
       return (<div>There are no notes</div>)
     } else {
       // debugger; 
@@ -49,8 +51,8 @@ class Note extends React.Component {
         <div className='notes-wrapper'>
           <div className='notes-title'>All Notes</div>
           <div className='notes-outer'>
-            {this.props.notes.map(note => (
-              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} coloredNote={this.props.coloredNote} />
+            {notes.map(note => (
+              <NoteBox key={note._id} text={note.text} title={note.title} id={note._id} deletedNote={this.props.deletedNote} note={note} />
             ))}
           </div>
         </div>

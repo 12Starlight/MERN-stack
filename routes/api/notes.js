@@ -48,7 +48,10 @@ router.post('/',
     const newNote = new Note({
       user: req.user.id,
       title: req.body.title,
-      text: req.body.text
+      text: req.body.text,
+      colorTop: req.body.colorTop,
+      colorBody: req.body.colorBody,
+      colorCorner: req.body.colorCorner 
     });
 
     newNote.save().then(note => res.json(note));

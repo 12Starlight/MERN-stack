@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteBox from './note_box';
+import NoteBoxContainer from './note_box_container';
 import './note-compose.css'
 import './note_box.css';
 
@@ -38,7 +38,8 @@ class NoteCompose extends React.Component {
       title: this.state.title,
       text: this.state.text,
       colorTop: this.state.colorTop,
-      colorBody: this.state.colorBody
+      colorBody: this.state.colorBody,
+      colorCorner: this.state.colorCorner
     }
 
     this.props.composeNote(note);
@@ -52,7 +53,6 @@ class NoteCompose extends React.Component {
   }
 
   handleColor(input1, input2, input3) {
-    console.log(input1, input2);
     this.setState({
       colorTop: input1,
       colorBody: input2,
@@ -74,12 +74,12 @@ class NoteCompose extends React.Component {
     }
 
     return(
-      <div style={color} className='noteCompose-wrapper'>
+      <div className='noteCompose-wrapper'>
         <div className='noteCompose-outer' >
           <form >
             <div className='noteComposeForm'>
               <input
-                style={input}
+                // style={input}
                 className='noteCompose-input'
                 type='text'
                 value={this.state.title}
@@ -88,7 +88,7 @@ class NoteCompose extends React.Component {
               />
               <br />
               <input
-                style={input}
+                // style={input}
                 className='noteCompose-input'
                 type='textarea'
                 value={this.state.text}
@@ -105,7 +105,7 @@ class NoteCompose extends React.Component {
           </form>
           <br />
           <div className='noteCompose-noteBox-wrapper'>
-            <NoteBox text={this.state.newNote.text} title={this.state.newNote.title} id={this.state.id} deletedNote={deletedNote} color={color} input={input}  />          
+            <NoteBoxContainer text={this.state.newNote.text} title={this.state.newNote.title} id={this.state.id} deletedNote={deletedNote} color={color} />          
           </div>
         </div>
       </div>
