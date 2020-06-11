@@ -115,3 +115,5 @@ class NoteCompose extends React.Component {
 
 
 export default NoteCompose; 
+
+
