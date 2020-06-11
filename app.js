@@ -6,8 +6,8 @@ const passport = require('passport');
 // require('./config/passport')(passport)
 const path = require('path');
 
-const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
-// const db = process.env.MONGO_URI
+// const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
+const db = process.env.MONGO_URI
 const users = require('./routes/api/users'); // After we created our routes they need to be imported
 const notes = require('./routes/api/notes');
 const User = require('./models/User');
