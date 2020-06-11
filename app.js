@@ -6,8 +6,8 @@ const passport = require('passport');
 // require('./config/passport')(passport)
 const path = require('path');
 
-// const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
-const db = process.env.MONGO_URI
+const db = require('./config/keys').mongoURI; // Gives us an object back, we want the mongoURI key
+// const db = process.env.mongoURI
 const users = require('./routes/api/users'); // After we created our routes they need to be imported
 const notes = require('./routes/api/notes');
 const User = require('./models/User');
@@ -15,8 +15,8 @@ const bodyParser = require('body-parser'); // Tells our app what sorts of reques
 
 
 mongoose 
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true }) // Connecting to the database, 2nd arg config object 
-  .then(() => console.log('Connected to MongoDB successfully', process.env.MONGO_URI))
+  .connect(db, { useNewUrlParser: true }) // Connecting to the database, 2nd arg config object 
+  .then(() => console.log('Connected to MongoDB successfully'))
   .catch(err => console.log(err));
 
 app.use(bodyParser.urlencoded({ extended: false })); // App responds to other software like postman, Takes an options object
@@ -34,9 +34,9 @@ const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('frontend/public'));
+  app.use(express.static('frontend/build'));
   app.get('/', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'public', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
   })
 } else {
   app.get('/', (req, res) => {
