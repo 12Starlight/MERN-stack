@@ -54,6 +54,10 @@
   background: #5f5fff;
 }
 
+.login-form-input:hover {
+  background: #7272ff;
+}
+
 .login-form-input::placeholder {
   color: rgb(245, 245, 245);
 }

@@ -55,6 +55,10 @@
   background: #5f5fff;
 }
 
+.signup-form-input:hover {
+  background: #7272ff;
+}
+
 .signup-form-input::placeholder {
   color: rgb(245, 245, 245);
 }
@@ -67,6 +71,7 @@
 }
 
 .signup-form-input-button {
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 600;
   font-size: 1em;
@@ -79,6 +84,13 @@
   cursor: pointer;
   border-radius: 6px;
   background: #5f5fff;
+  border: 1px solid transparent; 
+}
+
+.signup-form-input-button:hover {
+  color: #5f5fff;
+  background: whitesmoke; 
+  border: 1px solid rgb(165, 91, 0); 
 }
 
 .signup-form-button {
@@ -93,4 +105,10 @@
   cursor: pointer;
   border-radius: 6px;
   background: #5f5fff;
+}
+
+.signup-form-button:hover {
+  color: #5f5fff;
+  background: whitesmoke; 
+  border: 1px solid rgb(165, 91, 0); 
 }

@@ -199,9 +199,10 @@
 }
 
 .links-signedOut-inner:hover {
-  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
-  /* border: .5px solid rgba(255, 68, 0, 0.253);
-  color: darkorange; */
+  /* box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253); */
+  /* border: .5px solid rgba(255, 68, 0, 0.253); */
+  border: .5px solid rgb(65, 105, 225);
+  /* color: darkorange; */
   background: whitesmoke;
   color: darkblue;
 }
