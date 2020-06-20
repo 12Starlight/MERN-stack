@@ -12,6 +12,7 @@ const users = require('./routes/api/users'); // After we created our routes they
 const notes = require('./routes/api/notes');
 const User = require('./models/User');
 const bodyParser = require('body-parser'); // Tells our app what sorts of requests, it should respond to
+require('newrelic');
 
 
 mongoose 
