@@ -108,10 +108,11 @@
 }
 
 .links-loggedIn-inner:hover {
-  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
+  /* box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253); */
   /* background: darkorange;  */
   /* border: .5px solid rgba(255, 68, 0, 0.253);
   color: darkorange; */
+  border: .5px solid rgb(65, 105, 225);
   background: whitesmoke;
   color: darkblue;
 }
@@ -137,9 +138,10 @@
 }
 
 .links-loggedIn-button:hover {
-  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
+  /* box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253); */
   /* border: .5px solid rgba(255, 68, 0, 0.253);
   color: darkorange; */
+  border: .5px solid rgb(65, 105, 225);
   background: whitesmoke;
   color: darkblue;
 }
