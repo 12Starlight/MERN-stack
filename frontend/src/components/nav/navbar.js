@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faJediOrder } from '@fortawesome/free-brands-svg-icons'
-import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
+import { faJediOrder, faLinkedin, faGithub, faTwitter, faAngellist } from '@fortawesome/free-brands-svg-icons'
+import { faFeatherAlt, faGlobeAmericas } from '@fortawesome/free-solid-svg-icons'
 import './navbar.css';
 
 
@@ -48,6 +48,15 @@ class NavBar extends React.Component {
     return (
       <div className='nav-outer vertical-line'>
         <div className='nav-title'><div className='nav-title-inner'>Starlight Insights</div><FontAwesomeIcon className='nav-title-inner-icon' icon={faFeatherAlt} /></div>
+        <div class="navLinks-wrapper">
+          <ul class="navLinks-container">
+            <li className='outer-links'><a className='inner-links' href="https://www.linkedin.com/in/davegagnat/"><FontAwesomeIcon class="linkedIn" icon={faLinkedin} /></a></li>
+            <li className='outer-links'><a className='inner-links' href="https://github.com/12Starlight"><FontAwesomeIcon class="github" icon={faGithub} /></a></li>
+            <li className='outer-links'><a className='inner-links' href="https://twitter.com/hashtag/TheCodeEffect?src=hash"><FontAwesomeIcon class="twitter" icon={faTwitter} /></a></li>
+            <li className='outer-links'><a className='inner-links' href="https://angel.co/u/dave-gagnat"><FontAwesomeIcon class="angel" icon={faAngellist} /></a></li>
+            <li className='outer-links'><a className='inner-links' href="https://www.davegagnat.com"><FontAwesomeIcon class="globe" icon={faGlobeAmericas} /></a></li>
+          </ul>
+        </div>
         <div>
           {this.getLinks()}
         </div>
