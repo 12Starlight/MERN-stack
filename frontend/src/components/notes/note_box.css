@@ -74,13 +74,13 @@
   height: 40%;
   /* width: 30%; */
   border-radius: 6px;
-  border: .5px solid rgba(65, 105, 225, 0.253);
+  border: .5px solid rgba(65, 105, 225, 0.507);
   background: white;
 }
 
 .noteBox-button:hover {
   /* box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253); */
-  border: .5px solid rgba(65, 105, 225, 0.602);
+  border: .5px solid rgb(65, 105, 225);
   background: whitesmoke;
   font-weight: 600;
   color: darkblue;  
