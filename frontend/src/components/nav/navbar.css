@@ -2,21 +2,22 @@
   position: absolute;
   box-sizing: border-box;
   display: flex;
+  justify-content: space-between;
   top: 0;
   right: 0;
   bottom: 0; 
   left: 0;
   height: 8%;
+  max-width: 100%;
   background: rgb(237, 249, 255);
-  /* border-top: 1px solid orange; */
-  /* border-bottom: 1px solid orange; */
+  border: 1px solid rgba(72, 72, 116, 0.109);
 }
 
 .nav-title {
   display: flex;
   align-items: center;
-  width: 15%;
-  /* border: 1px solid orange; */
+  width: 30%;
+  /* border: 1px solid orange;   */
 }
 
 .nav-title-inner {
@@ -27,19 +28,19 @@
   padding-left: 5%; 
   font-size: 1.9em;
   font-weight: 600;
-  text-shadow:  0 .2px 0 rgb(48, 0, 207),
+  /*text-shadow:  0 .2px 0 rgb(48, 0, 207),
                 0 .7px 0 rgb(37, 0, 201),
-                0 .1px 0 rgb(196, 85, 0),
+                /* 0 .1px 0 rgb(196, 85, 0),
                 0 .2px 0 rgb(191, 80, 0),
-                0 .3px 0 rgb(186, 75, 0),
-                0 1.1px 1px rgba(0,0,0,.1),
+                0 .3px 0 rgb(186, 75, 0), */
+                /* 0 1.1px 1px rgba(0,0,0,.1),
                 0 0 1px rgba(0,0,0,.1),
-                0 .6px .8px rgba(0,0,0,.3),
-                0 .8px 1px rgba(0,0,0,.2),
+                0 .6px .8px rgba(0,0,0,.3); */
+                /* 0 .8px 1px rgba(0,0,0,.2),
                 0 1px .6px rgba(0,0,0,.25),
                 0 .6px .6px rgba(0,0,0,.2),
-                0 .7px .7px rgba(0,0,0,.15);
-
+                0 .7px .7px rgba(0,0,0,.15); */ 
+  text-shadow: .8px .6px 0px #7A7A7A;
   letter-spacing: -1px;
   word-spacing: .1px; 
   color: rgb(18, 119, 214);
@@ -48,26 +49,26 @@
 }
 
 .nav-title-inner-icon {
-  font-size: 2em;
-  color: rgb(32, 140, 228);
+  font-size: 2.3em;
+  color: rgb(0, 31, 207);
+  /* color: rgb(32, 140, 228); */
 }
 
 /* Logged In */
 .links-loggedIn-wrapper {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   /* margin-left: 1000px;  */
   height: 100%;
-  width: 85%; 
+  width: 700px; 
   /* border: 1px solid blue;  */
 }
 
 .links-loggedIn-outer {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  width: 50%; 
+  max-width: 100%; 
   /* border: 1px solid orange;    */
 }
 
@@ -77,12 +78,12 @@
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  outline: none; 
   height: 40%;
-  width: 16%;
-  border-radius: 6px;
-  background: orange;
-  border: 1px solid orange; 
+  margin: 2%;
+  border: none;
+  outline: none;
+  /* width: 16%; */
+  /* background: orange; */
 }
 
 .links-loggedIn:hover {
@@ -90,51 +91,66 @@
 }
 
 .links-loggedIn-inner {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9em;
-  color: rgb(0, 64, 255);
-  text-shadow: 1px 2px 3px rgb(255, 255, 255);
-  width: 100%; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: .95em;
+  font-weight: 600;
+  color: royalblue;
+  /* text-shadow: 1px 2px 3px rgb(255, 255, 255); */
+  width: 120px; 
+  box-shadow: inset 0px 0px 4px .1px rgba(65, 105, 225, 0.253);
   outline: none; 
+  /* border: none; */
   cursor: pointer;
-  border: none;
-  background: orange;
+  border-radius: 6px;
+  border: .5px solid rgba(65, 105, 225, 0.253);
+  background: white;
 }
 
 .links-loggedIn-inner:hover {
-  background: none; 
+  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
+  /* background: darkorange;  */
+  /* border: .5px solid rgba(255, 68, 0, 0.253);
+  color: darkorange; */
+  background: whitesmoke;
+  color: darkblue;
 }
 
 .links-loggedIn-button {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9em; 
-  color: rgb(0, 64, 255);
-  text-shadow: 1px 2px 3px rgb(255, 255, 255);
   display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: inset 0px 0px 4px .1px rgba(65, 105, 225, 0.253);
+  font-size: .95em; 
+  font-weight: 600;
+  color: royalblue;
   justify-content: center;
-  text-decoration: none;
-  text-align: center;
   cursor: pointer;
   outline: none; 
-  height: 40%;
-  width: 16%;
+  line-height: 100%;
+  /* height: 43%; */
+  padding: 1.24%;
+  width: 190px;
+  margin-left: 2%;
   border-radius: 6px;
-  background: orange; 
-  border: 1px solid orange; 
+  border: .5px solid rgba(65, 105, 225, 0.253);
+  background: white;
 }
 
 .links-loggedIn-button:hover {
-  background: none; 
+  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
+  /* border: .5px solid rgba(255, 68, 0, 0.253);
+  color: darkorange; */
+  background: whitesmoke;
+  color: darkblue;
 }
 
 /* Signed Out */
 .links-signedOut-wrapper {
-  position: absolute;
+  /* position: absolute; */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   /* margin-left: 1000px;  */
   height: 100%;
-  width: 85%; 
+  width: 300px;
   /* border: 1px solid blue;  */
 }
 
@@ -142,7 +158,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 30%; 
+  max-width: 100%; 
   /* border: 1px solid orange;  */
 }
 
@@ -154,10 +170,11 @@
   cursor: pointer;
   outline: none; 
   height: 40%;
-  width: 26%;
-  border-radius: 6px;
-  background: orange;
-  border: 1px solid orange; 
+  width: 125px;
+  margin: 8%;
+  /* border-radius: 6px; */
+  /* background: orange;
+  border: 1px solid orange;  */
 }
 
 .links-signedOut:hover {
@@ -165,17 +182,23 @@
 }
 
 .links-signedOut-inner {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: .9em;
-  color: rgb(0, 64, 255);
-  text-shadow: 1px 2px 3px rgb(255, 255, 255);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  box-shadow: inset 0px 0px 4px .1px rgba(65, 105, 225, 0.253);
+  font-size: .95em; 
+  font-weight: 600;
+  color: royalblue;
   outline: none; 
   cursor: pointer;
   width: 100%;
-  background: orange;
-  border: none;
+  border: .5px solid rgba(65, 105, 225, 0.253);
+  border-radius: 6px;
+  background: white;
 }
 
 .links-signedOut-inner:hover {
-  background: none; 
+  box-shadow: inset 0px 0px 4px .5px rgba(255, 140, 0, 0.253);
+  /* border: .5px solid rgba(255, 68, 0, 0.253);
+  color: darkorange; */
+  background: whitesmoke;
+  color: darkblue;
 }

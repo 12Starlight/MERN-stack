@@ -15,7 +15,7 @@ const bodyParser = require('body-parser'); // Tells our app what sorts of reques
 
 
 mongoose 
-  .connect(db, { useNewUrlParser: true }) // Connecting to the database, 2nd arg config object 
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true }) // Connecting to the database, 2nd arg config object 
   .then(() => console.log('Connected to MongoDB successfully'))
   .catch(err => console.log(err));
 

@@ -9,10 +9,17 @@
 }
 
 .notes-title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.4em;
-  padding-left: 1%; 
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2.5em;
+  font-weight: 700;
+  padding-left: 1.5%; 
   margin-top: 2%; 
+  color: transparent;
+  background: #1f026e;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 }
 
 .notes-outer {

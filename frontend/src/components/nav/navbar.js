@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faJediOrder } from '@fortawesome/free-brands-svg-icons'
+import { faFeatherAlt } from '@fortawesome/free-solid-svg-icons'
 import './navbar.css';
 
 
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <div className='nav-outer vertical-line'>
-        <div className='nav-title'><div className='nav-title-inner'>Starlight</div><FontAwesomeIcon className='nav-title-inner-icon' icon={faJediOrder} /></div>
+        <div className='nav-title'><div className='nav-title-inner'>Starlight Insights</div><FontAwesomeIcon className='nav-title-inner-icon' icon={faFeatherAlt} /></div>
         <div>
           {this.getLinks()}
         </div>

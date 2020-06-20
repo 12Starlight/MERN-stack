@@ -3,7 +3,7 @@ import NoteBox from './note_box';
 
 
 const mapStateToProps = (state) => {
-  debugger; 
+  // debugger; 
   return {
     notes: Object.values(state.notes.all),
     newest: state.notes.new 
