@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import NoteBox from './note_box';
+import { fetchNotes } from '../../actions/note_actions';
 
 
 const mapStateToProps = (state) => {
@@ -12,6 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchNotes: () => dispatch(fetchNotes())
   };
 };
 

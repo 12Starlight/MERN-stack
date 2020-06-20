@@ -1,12 +1,18 @@
 import React from 'react';
 import './note_box.css';
+import { withRouter } from 'react-router-dom';
 
 
 class NoteBox extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.state = {
+    //   changed: false
+    // }
+
     this.display = this.display.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
   display() {
@@ -16,6 +22,15 @@ class NoteBox extends React.Component {
       x.style.display = 'flex';
     } else {
       x.style.display = 'none'
+    }
+  }
+
+  delete(e) {
+    e.preventDefault();
+    // debugger; 
+    this.props.deletedNote(this.props.id);
+    if (this.props.location.pathname === '/new_note') {
+      window.location.reload();
     }
   }
 
@@ -50,7 +65,7 @@ class NoteBox extends React.Component {
           <div className='noteBox-text'>{this.props.text}</div>        
         </div>
         <div className='noteBox-buttons'>
-          <button onClick={() => deletedNote(id)} className='noteBox-button'>delete</button>
+          <button onClick={this.delete} className='noteBox-button'>delete</button>
         </div>
       </div>
     )
@@ -58,4 +73,4 @@ class NoteBox extends React.Component {
 }
 
 
-export default NoteBox; 
+export default withRouter(NoteBox); 

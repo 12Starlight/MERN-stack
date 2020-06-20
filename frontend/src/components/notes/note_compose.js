@@ -94,7 +94,7 @@ class NoteCompose extends React.Component {
                 value={this.state.text}
                 onChange={this.update('text')}
                 placeholder='Write your note...'
-                maxlength='145'
+                maxLength='145'
               />
               <div className='noteCompose-buttons'>
                 <button className='noteCompose-button' onClick={this.handleSubmit} >Create</button>
